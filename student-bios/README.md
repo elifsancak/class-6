@@ -18,7 +18,7 @@ This folder will soon contain a markdown from each and every one of you, Pull Re
     * Include your github user name and make it a link to you github account
     * Introduce yourself so your classmates and future coaches can get to know you!
 4. Send a pull request to merge your file into the main repository on HackYourFutureBEHomework
-    * [pull requesting](https://github.com/janke-learning/pull-requesting)
+    * [step-by-step pull requesting](https://github.com/HackYourFutureBelgium/git-github-practice/wiki/Pull-Requesting)
     * [github help](https://help.github.com/en/articles/creating-a-pull-request)
     * [github guides](https://guides.github.com/activities/forking/)
 
