@@ -13,12 +13,21 @@ Here is my github link:
 
 ![image](/Desktop/akbel.png)
 
+![akbels image](/images/akbel.png)
+
+![image](https://github.com/HackYourFutureBelgium/class-6/issues/5#issue-494185430)
+
+![akbel.img](https://github.com/HackYourFutureBelgium/class-6/issues/5#issue-494185430)
+
 <img src= "(file:///Users/akbel/Desktop/akbel.png)">
 
 <img src= "(https://github.com/HackYourFutureBelgium/class-6/issues/5)" >
 
 
-![akbel](/images/akbel.png)
+
+<img src="https://github.com/HackYourFutureBelgium/class-6/issues/5#issue-494185430">
+
+
 
 
 
