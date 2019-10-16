@@ -7,4 +7,4 @@ I have two kids and a bunch of **hope and joy**. Enjoy!
 Here is my github link:
 [akbelcolak](http://github.com)
 
-![image](./images/akbel.png)
+![image](https://github.com/akbelcolak/class-6/blob/master/student-bios/akbel%20bio/images/akbel.png?raw=true)
