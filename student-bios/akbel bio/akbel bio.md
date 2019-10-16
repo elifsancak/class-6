@@ -9,7 +9,7 @@ Here is my github link:
 [akbelcolak](http://github.com)
 
 
-![image](/images/akbel.png)
+![image](./images/akbel.png)
 
 
 
