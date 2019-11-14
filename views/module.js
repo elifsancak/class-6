@@ -4,9 +4,9 @@ function renderModule(module, students) {
 
   const studentsUl = students
     .map(student => {
-      return module.repos
+      const header = renderStudentThumbnail(student);
+      const modulesList = module.repos
         .map(repo => {
-          const header = renderStudentThumbnail(student);
 
           const li = document.createElement('li');
           li.appendChild(header);
@@ -17,6 +17,12 @@ function renderModule(module, students) {
           ul.appendChild(li);
           return ul;
         }, document.createElement('ul'))
+
+      const container = document.createElement('div');
+      container.appendChild(header);
+      container.appendChild(modulesList);
+
+      return container;
     })
     .reduce((div, ul) => {
       div.appendChild(ul);
