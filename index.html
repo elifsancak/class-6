@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>tracker poc</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+  <script src='class-data/students.js'></script>
+  <script src='class-data/modules.js'></script>
+  <script src='views/go-home.js'></script>
+  <script src='views/home.js'></script>
+  <script src='views/module.js'></script>
+  <script src='views/student.js'></script>
+  <script src='views/repo.js'></script>
+  <script src='views/links.js'></script>
+  <script src='views/link-buttons.js'></script>
+  <script src='views/student-thumbnail.js'></script>
+</head>
+
+<body>
+
+  <button id='go-home-top'>go home</button>
+  <script>
+    document.getElementById('go-home-top').onclick = () => {
+      document.getElementById('root').innerHTML = '';
+      document.getElementById('root').appendChild(renderHome(modules, students));
+    }
+  </script>
+
+  <div id='root'></div>
+
+  <button id='go-home-bottom'>go home</button>
+  <script>
+    document.getElementById('go-home-bottom').onclick = () => {
+      document.getElementById('root').innerHTML = '';
+      document.getElementById('root').appendChild(renderHome(modules, students));
+    }
+
+    document.getElementById('root').innerHTML = '';
+    document.getElementById('root').appendChild(renderHome(modules, students));
+  </script>
+
+</body>
+
+</html>
