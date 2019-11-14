@@ -5,9 +5,12 @@ function renderModule(module, students) {
   const studentsUl = students
     .map(student => {
       const header = renderStudentThumbnail(student);
+      header.onclick = () => {
+        document.getElementById('root').innerHTML = '';
+        document.getElementById('root').appendChild(renderStudent(student, modules));
+      };
       const modulesList = module.repos
         .map(repo => {
-
           const li = document.createElement('li');
           li.appendChild(header);
           li.appendChild(renderRepo(repo, student));
