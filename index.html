@@ -22,7 +22,7 @@
 
 <body>
 
-  <button id='go-home-top'>go home</button>
+  <button id='go-home-top'>back to index</button>
   <script>
     document.getElementById('go-home-top').onclick = () => {
       document.getElementById('root').innerHTML = '';
@@ -32,7 +32,7 @@
 
   <div id='root'></div>
 
-  <button id='go-home-bottom'>go home</button>
+  <button id='go-home-bottom'>back to index</button>
   <script>
     document.getElementById('go-home-bottom').onclick = () => {
       document.getElementById('root').innerHTML = '';
@@ -42,6 +42,13 @@
     document.getElementById('root').innerHTML = '';
     document.getElementById('root').appendChild(renderHome(modules, students));
   </script>
+
+  <hr>
+  <br>
+  <a href='https://github.com/hackyourfuturebelgium/class-6' target='_blank'>
+    <button>to main repository</button>
+  </a>
+
 
 </body>
 

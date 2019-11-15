@@ -5,7 +5,7 @@ const modules = [
     name: 'HTML, CSS & GitHub',
     repos: [
       {
-        name: 'html-css-github',
+        name: 'HTML-CSS-GitHub',
         paths: [
           'homework/week-1-project',
           'homework/week-2-project',
