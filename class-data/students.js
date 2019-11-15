@@ -19,10 +19,10 @@ const students = [
     name: 'Elif Sancak',
     userName: 'elifsancak',
   },
-  // { // Yavuz is ill
-  //   name: 'Yavuz Ugurtas',
-  //   userName: '',
-  // },
+  { 
+    name: 'Yavuz Ugurtas',
+    userName: 'yavuzugurtas',
+  },
   {
     name: 'Ahed',
     userName: 'aahedd',
