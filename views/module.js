@@ -1,4 +1,7 @@
 function renderModule(module, students) {
+
+  history.pushState({}, null, '/?module=' + module.name);
+
   const header = document.createElement('h2');
   header.innerHTML = module.name;
 

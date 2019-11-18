@@ -9,12 +9,13 @@ function renderStudentThumbnail(student) {
     .then(user => studentImg.src = user.avatar_url)
     .catch(err => console.log(err));
 
-  const p = document.createElement('p');
-  p.innerHTML = student.name + ' (' + student.userName + ')';
+  const nameComponent = document.createElement('p');
+  nameComponent.innerHTML = student.name;
+
 
   const container = document.createElement('div');
   container.appendChild(studentImg);
-  container.appendChild(p);
+  container.appendChild(nameComponent);
 
 
   return container;

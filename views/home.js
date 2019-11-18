@@ -1,4 +1,7 @@
 function renderHome(modules, students) {
+
+  history.pushState({}, null, '/');
+
   const studentsUl = students
     .map(student => {
       const studThumb = renderStudentThumbnail(student);

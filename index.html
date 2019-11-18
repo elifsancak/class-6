@@ -17,6 +17,24 @@
   <script src='views/links.js'></script>
   <script src='views/link-buttons.js'></script>
   <script src='views/student-thumbnail.js'></script>
+
+  <script>
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const studentParam = urlParams.get('student');
+      const moduleParam = urlParams.get('module');
+
+      if (studentParam) {
+        document.getElementById('root').innerHTML = '';
+        const theStudent = students.filter(s => s.name === studentParam)[0];
+        document.getElementById('root').innerHTML = renderStudent(theStudent, modules);
+      } else if (moduleParam) {
+        document.getElementById('root').innerHTML = '';
+        const theModule = modules.filter(m => m.name === studentParam)[0];
+        document.getElementById('root').innerHTML = renderStudent(theModule, students);
+      }
+    }
+  </script>
 </head>
 
 <body>

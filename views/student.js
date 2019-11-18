@@ -1,5 +1,17 @@
 function renderStudent(student, modules) {
+
+  history.pushState({}, null, '/?student=' + student.name);
+
   const header = renderStudentThumbnail(student);
+
+  const githubButton = document.createElement('button');
+  githubButton.innerHTML = student.userName + ' (on GitHub)';
+  githubButton.style = 'height:35px;'
+
+  const githubLink = document.createElement('a');
+  githubLink.href = 'https://github.com/' + student.userName;
+  githubLink.target = '_blank';
+  githubLink.appendChild(githubButton);
 
   // once md bios have standardized names
   // and they build un.gh.io portfolios in module 0
@@ -15,7 +27,6 @@ function renderStudent(student, modules) {
         document.getElementById('root').appendChild(renderModule(module, students));
       };
       header.style = 'height:35px;'
-
 
       const reposUl = module.repos
         .map(repo => {
@@ -42,7 +53,11 @@ function renderStudent(student, modules) {
     }, document.createElement('div'))
 
   const container = document.createElement('div');
+  container.appendChild(document.createElement('br'));
   container.appendChild(header);
+  container.appendChild(githubLink);
+  container.appendChild(document.createElement('br'));
+  container.appendChild(document.createElement('br'));
   container.appendChild(modulesUl);
 
   return container;
