@@ -20,22 +20,23 @@
 
   <script>
     window.onload = () => {
-      const urlString = window.location.href;
-      const url = new URL(urlString);
+      urlString = window.location.href;
+      url = new URL(urlString);
 
-      const studentParam = url.searchParams.get("student");
-      const moduleParam = url.searchParams.get("module");
+      studentParam = url.searchParams.get("student");
+      moduleParam = url.searchParams.get("module");
 
       if (studentParam) {
-        console.log('in student')
         document.getElementById('root').innerHTML = '';
         const theStudent = students.filter(s => s.name === studentParam)[0];
         document.getElementById('root').appendChild(renderStudent(theStudent, modules));
       } else if (moduleParam) {
-        console.log('in module')
         document.getElementById('root').innerHTML = '';
         const theModule = modules.filter(m => m.name === moduleParam)[0];
         document.getElementById('root').appendChild(renderModule(theModule, students));
+      } else {
+        document.getElementById('root').innerHTML = '';
+        document.getElementById('root').appendChild(renderHome(modules, students));
       }
     }
   </script>
@@ -59,9 +60,6 @@
       document.getElementById('root').innerHTML = '';
       document.getElementById('root').appendChild(renderHome(modules, students));
     }
-
-    document.getElementById('root').innerHTML = '';
-    document.getElementById('root').appendChild(renderHome(modules, students));
   </script>
   <br>
   <hr>
