@@ -30,10 +30,12 @@ function renderHome(modules, students) {
             : 'purple';
 
       moduleViewButton.style.color = color;
-      moduleViewButton.onclick = () => {
-        document.getElementById('root').innerHTML = '';
-        document.getElementById('root').appendChild(renderModule(module, students));
-      };
+      moduleViewButton.onclick = module.status === 'to do'
+        ? () => { }
+        : () => {
+          document.getElementById('root').innerHTML = '';
+          document.getElementById('root').appendChild(renderModule(module, students));
+        };
 
       const newLi = document.createElement('li');
       newLi.appendChild(moduleViewButton);

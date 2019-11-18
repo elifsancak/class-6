@@ -3,7 +3,16 @@ function renderModule(module, students) {
   history.pushState({}, null, '/class-6/?module=' + module.name);
 
   const header = document.createElement('h2');
-  header.innerHTML = module.name;
+  header.innerHTML = module.name + ' (' + module.status + ')';
+  const color = module.status === 'complete'
+    ? 'green'
+    : module.status === 'in progress'
+      ? 'black'
+      : module.status === 'to do'
+        ? 'orange'
+        : 'purple';
+
+  header.style.color = color;
 
   const studentsUl = students
     .map(student => {

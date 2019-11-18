@@ -1,3 +1,4 @@
+// add modules property for tracking each student's progress?
 const students = [
   {
     name: 'Ibrahim Akadr',
@@ -19,7 +20,7 @@ const students = [
     name: 'Elif Sancak',
     userName: 'elifsancak',
   },
-  { 
+  {
     name: 'Yavuz Ugurtas',
     userName: 'yavuzugurtas',
   },

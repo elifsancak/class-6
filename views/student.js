@@ -5,7 +5,7 @@ function renderStudent(student, modules) {
   const header = renderStudentThumbnail(student);
 
   const githubButton = document.createElement('button');
-  githubButton.innerHTML = student.userName + ' (on GitHub)';
+  githubButton.innerHTML = 'github.com/' + student.userName;
   githubButton.style = 'height:35px;'
 
   const githubLink = document.createElement('a');
@@ -13,12 +13,23 @@ function renderStudent(student, modules) {
   githubLink.target = '_blank';
   githubLink.appendChild(githubButton);
 
+  const portfolioButton = document.createElement('button');
+  portfolioButton.innerHTML = student.userName + '.github.io';
+  portfolioButton.style = 'height:35px;'
+
+  const portfolioLink = document.createElement('a');
+  portfolioLink.href = 'https://' + student.userName + '.github.io';
+  portfolioLink.target = '_blank';
+  portfolioLink.appendChild(portfolioButton);
+
   // once md bios have standardized names
   // and they build un.gh.io portfolios in module 0
   // buttons to those can be put here
 
   const modulesUl = modules
     .map(module => {
+      if (module.status === 'to do') return document.createElement('div');
+
       const header = document.createElement('button');
       header.innerHTML = module.name;
       header.onclick = () => {
@@ -56,6 +67,7 @@ function renderStudent(student, modules) {
   container.appendChild(document.createElement('br'));
   container.appendChild(header);
   container.appendChild(githubLink);
+  container.appendChild(portfolioLink);
   container.appendChild(document.createElement('br'));
   container.appendChild(document.createElement('br'));
   container.appendChild(modulesUl);
