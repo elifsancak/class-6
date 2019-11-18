@@ -1,7 +1,7 @@
 function renderStudentThumbnail(student) {
 
   const studentImg = document.createElement('img');
-  studentImg.alt = student.name;
+  studentImg.alt = student.name + ' (' + student.userName + ')';
   studentImg.style = 'height:65px;width:65px;';
 
   fetch('https://api.github.com/users/' + student.userName)
@@ -10,7 +10,7 @@ function renderStudentThumbnail(student) {
     .catch(err => console.log(err));
 
   const p = document.createElement('p');
-  p.innerHTML = student.name;
+  p.innerHTML = student.name + ' (' + student.userName + ')';
 
   const container = document.createElement('div');
   container.appendChild(studentImg);

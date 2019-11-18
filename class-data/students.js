@@ -50,10 +50,6 @@ const students = [
   {
     name: 'ufuk uysal',
     userName: 'u-uysal',
-  },
-  {
-    name: 'the repo they forked',
-    userName:'be-hacking-hyf'
   }
 ];
 

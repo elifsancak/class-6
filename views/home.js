@@ -17,7 +17,16 @@ function renderHome(modules, students) {
   const modulesUl = modules
     .map(module => {
       const moduleViewButton = document.createElement('button');
-      moduleViewButton.innerHTML = module.name;
+      moduleViewButton.innerHTML = module.name + ' (' + module.status + ')';
+      const color = module.status === 'complete'
+        ? 'green'
+        : module.status === 'in progress'
+          ? 'black'
+          : module.status === 'to do'
+            ? 'orange'
+            : 'purple';
+
+      moduleViewButton.style.color = color;
       moduleViewButton.onclick = () => {
         document.getElementById('root').innerHTML = '';
         document.getElementById('root').appendChild(renderModule(module, students));
@@ -25,6 +34,7 @@ function renderHome(modules, students) {
 
       const newLi = document.createElement('li');
       newLi.appendChild(moduleViewButton);
+
       return newLi;
     })
     .reduce((ul, li) => {

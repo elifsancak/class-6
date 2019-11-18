@@ -3,6 +3,7 @@
 const modules = [
   {
     name: 'HTML, CSS & GitHub',
+    status: 'complete',
     repos: [
       {
         name: 'HTML-CSS-GitHub',
@@ -17,6 +18,7 @@ const modules = [
   },
   {
     name: 'javascript 1',
+    status: 'complete',
     repos: [
       {
         name: 'javascript-1',
@@ -31,6 +33,7 @@ const modules = [
   },
   {
     name: 'javascript 2',
+    status: 'complete',
     repos: [
       {
         name: 'javascript-2',
@@ -44,6 +47,7 @@ const modules = [
   },
   {
     name: 'javascript 3',
+    status: 'in progress',
     repos: [
       {
         name: 'javascript-3',
@@ -59,6 +63,15 @@ const modules = [
       {
         name: 'practical-javascript'
       }
+    ]
+  },
+  {
+    name: 'Node JS',
+    status: 'to do',
+    repos: [
+      {
+        name: 'node.js',
+      },
     ]
   },
 ]
