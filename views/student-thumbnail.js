@@ -2,7 +2,7 @@ function renderStudentThumbnail(student) {
 
   const studentImg = document.createElement('img');
   studentImg.alt = student.name + ' (' + student.userName + ')';
-  studentImg.style = 'height:65px;width:65px;';
+  studentImg.style = 'height:100px;width:100px;';
 
   fetch('https://api.github.com/users/' + student.userName)
     .then(resp => resp.json())
