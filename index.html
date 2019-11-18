@@ -20,18 +20,22 @@
 
   <script>
     window.onload = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const studentParam = urlParams.get('student');
-      const moduleParam = urlParams.get('module');
+      const urlString = window.location.href;
+      const url = new URL(urlString);
+
+      const studentParam = url.searchParams.get("student");
+      const moduleParam = url.searchParams.get("module");
 
       if (studentParam) {
+        console.log('in student')
         document.getElementById('root').innerHTML = '';
         const theStudent = students.filter(s => s.name === studentParam)[0];
-        document.getElementById('root').innerHTML = renderStudent(theStudent, modules);
+        document.getElementById('root').appendChild(renderStudent(theStudent, modules));
       } else if (moduleParam) {
+        console.log('in module')
         document.getElementById('root').innerHTML = '';
-        const theModule = modules.filter(m => m.name === studentParam)[0];
-        document.getElementById('root').innerHTML = renderStudent(theModule, students);
+        const theModule = modules.filter(m => m.name === moduleParam)[0];
+        document.getElementById('root').appendChild(renderModule(theModule, students));
       }
     }
   </script>

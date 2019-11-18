@@ -1,6 +1,6 @@
 function renderHome(modules, students) {
 
-  history.pushState({}, null, '/');
+  history.pushState({}, null, '/class-6');
 
   const studentsUl = students
     .map(student => {

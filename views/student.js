@@ -1,6 +1,6 @@
 function renderStudent(student, modules) {
 
-  history.pushState({}, null, '/?student=' + student.name);
+  history.pushState({}, null, '/class-6/?student=' + student.name);
 
   const header = renderStudentThumbnail(student);
 
