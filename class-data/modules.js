@@ -62,6 +62,9 @@ const modules = [
       },
       {
         name: 'practical-javascript'
+      },
+      {
+        name: 'github-api-crash-course'
       }
     ]
   },
