@@ -25,10 +25,6 @@ const students = [
     userName: 'yavuzugurtas',
   },
   {
-    name: 'Ahed',
-    userName: 'aahedd',
-  },
-  {
     name: 'akbel colak',
     userName: 'akbelcolak',
   },
