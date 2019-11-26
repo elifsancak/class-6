@@ -1,6 +1,6 @@
 function renderModule(module, students) {
 
-  history.pushState({}, null, '/class-6/?module=' + module.name);
+  // history.pushState({}, null, '/class-6/?module=' + module.name);
 
   const header = document.createElement('h2');
   header.innerHTML = module.name + ' (' + module.status + ')';

@@ -1,10 +1,10 @@
 function renderRepo(repo, student) {
-  const header = renderLinkButtons(repo.name, student.userName, repo.name);
+  const header = renderLinkButtons(repo.name, student.userName, repo);
 
   const pathsList = repo.paths
     ? repo.paths
       .map(path => {
-        const links = renderLinkButtons(path, student.userName, repo.name, path);
+        const links = renderLinkButtons(path, student.userName, repo, path);
         const li = document.createElement('li');
         li.appendChild(links);
         return li;

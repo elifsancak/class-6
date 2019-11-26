@@ -12,7 +12,8 @@ const modules = [
           'homework/week-2-project',
           'homework/week-3-project',
           'homework/module-exercises',
-        ]
+        ],
+        live: true,
       }
     ]
   },
@@ -27,7 +28,8 @@ const modules = [
           'week-2-project',
           'week-3-project',
           'module-exercises',
-        ]
+        ],
+        live: true,
       }
     ]
   },
@@ -41,7 +43,8 @@ const modules = [
           'week-1-project',
           'week-2-project',
           'week-3-project',
-        ]
+        ],
+        live: true,
       }
     ]
   },
@@ -58,22 +61,41 @@ const modules = [
           'fetching-data',
           'closure',
           'classes'
-        ]
+        ],
+        live: true,
       },
       {
-        name: 'practical-javascript'
+        name: 'practical-javascript',
+        live: true,
       },
       {
-        name: 'github-api-crash-course'
+        name: 'github-api-crash-course',
+        live: true,
       }
     ]
   },
   {
     name: 'Node JS',
-    status: 'to do',
+    status: 'in progress',
     repos: [
       {
         name: 'node.js',
+        live: false,
+        type: 'Exercises',
+      },
+      {
+        name: 'javascript-exercises',
+        live: false,
+        type: 'Exercises',
+        paths: [
+          'helloWorld/report.txt',
+          'repeatString/report.txt',
+          'reverseString/report.txt',
+          'tempConversion/report.txt',
+          'getTheTitles/report.txt',
+          'findTheOldest/report.txt',
+          'calculator/report.txt',
+        ]
       },
     ]
   },

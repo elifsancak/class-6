@@ -7,7 +7,7 @@ function renderLinks(userName, repoName, path) {
 
   const sourceA = document.createElement('a');
   sourceA.href = path
-    ? 'https://github.com/' + userName + '/' + repoName + '/blob/master/' + path
+    ? 'https://github.com/' + userName + '/' + repoName + '/tree/master/' + path
     : 'https://github.com/' + userName + '/' + repoName;
 
   sourceA.target = '_blank';
