@@ -4,9 +4,17 @@ function renderLinkButtons(student, repo, path) {
   const container = document.createElement('div');
   container.style.display = 'inline';
 
+  const base = repo.url
+    ? repo.url
+    : 'https://' + student.userName + '.github.io/' + repo.name;
+
+  const gitPathing = repo.url
+    ? ''
+    : '/blob/master/';
+
   const pagesCheck = path
-    ? 'https://' + student.userName + '.github.io/' + repo.name + '/' + path
-    : 'https://' + student.userName + '.github.io/' + repo.name + '/index.html';
+    ? base + '/' + path
+    : base + '/index.html';
 
   fetch(pagesCheck)
     .then(resp => {
@@ -18,8 +26,8 @@ function renderLinkButtons(student, repo, path) {
 
           const a = document.createElement('a');
           a.href = path
-            ? 'https://' + student.userName + '.github.io/' + repo.name + '/' + path
-            : 'https://' + student.userName + '.github.io/' + repo.name + '/index.html';
+            ? base + '/' + path
+            : base;
           a.target = '_blank';
           a.appendChild(liveButton);
 
@@ -31,8 +39,8 @@ function renderLinkButtons(student, repo, path) {
 
         const a = document.createElement('a');
         a.href = path
-          ? 'https://github.com/' + student.userName + '/' + repo.name + '/blob/master/' + path
-          : 'https://github.com/' + student.userName + '/' + repo.name;
+          ? base + gitPathing + path
+          : base;
         a.target = '_blank';
         a.appendChild(sourceButton);
 
