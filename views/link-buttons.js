@@ -1,61 +1,59 @@
-/* improvements:
-  color code based on 404 status
-    red means 404
-    green means no 404
 
-*/
+function renderLinkButtons(student, repo, path) {
 
-function renderLinkButtons(text, userName, repo, path) {
-  const repoName = repo.name;
+  const container = document.createElement('div');
+  container.style.display = 'inline';
 
-  const repoLinks = renderLinks(userName, repoName, path);
+  const pagesCheck = path
+    ? 'https://' + student.userName + '.github.io/' + repo.name + '/' + path
+    : 'https://' + student.userName + '.github.io/' + repo.name + '/index.html';
 
-  const title = text + ': ' + (
-    repo.hasOwnProperty('type') && !path
-      ? '(' + repo.type + ')' : ''
-  );
-  const titleNode = document.createTextNode(title);
-
-  const viewSourceButton = document.createElement('button');
-  viewSourceButton.innerHTML = 'source code';
-  repoLinks.sourceA.appendChild(viewSourceButton);
-  console.log(repoLinks.sourceA.href)
-  fetch(repoLinks.sourceA.href)
+  fetch(pagesCheck)
     .then(resp => {
-      console.log(resp)
-      if (!resp.ok) {
-        viewSourceButton.innerHTML += ' (missing)';
-        viewSourceButton.style.color = 'orange';
+      if (resp.ok == true && resp.status !== 404) {
+
+        if (repo.live) {
+          const liveButton = document.createElement('button');
+          liveButton.innerHTML = 'live site';
+
+          const a = document.createElement('a');
+          a.href = path
+            ? 'https://' + student.userName + '.github.io/' + repo.name + '/' + path
+            : 'https://' + student.userName + '.github.io/' + repo.name + '/index.html';
+          a.target = '_blank';
+          a.appendChild(liveButton);
+
+          container.appendChild(a);
+        }
+
+        const sourceButton = document.createElement('button');
+        sourceButton.innerHTML = 'source code';
+
+        const a = document.createElement('a');
+        a.href = path
+          ? 'https://github.com/' + student.userName + '/' + repo.name + '/blob/master/' + path
+          : 'https://github.com/' + student.userName + '/' + repo.name;
+        a.target = '_blank';
+        a.appendChild(sourceButton);
+
+        container.appendChild(a);
+
+      } else {
+        const code = document.createElement('code');
+        code.innerHTML = '-- 404 --';
+
+        container.appendChild(code);
       }
     })
     .catch(err => {
-      viewSourceButton.innerHTML += ' (missing)';
-      viewSourceButton.style.color = 'red';
-    });
+      console.log(err);
 
-  const container = document.createElement('div');
-  container.appendChild(titleNode);
-  if (repo.live) {
-    const viewLiveButton = document.createElement('button');
-    viewLiveButton.innerHTML = 'live site';
-    repoLinks.liveA.appendChild(viewLiveButton);
-    console.log(repoLinks.liveA.href)
-    fetch(repoLinks.liveA.href)
-      .then(resp => {
-        console.log(resp)
-        if (!resp.ok) {
-          viewLiveButton.innerHTML += ' (missing)';
-          viewLiveButton.style.color = 'orange';
-        }
-      })
-      .catch(err => {
-        viewLiveButton.innerHTML += ' (missing)';
-        viewLiveButton.style.color = 'red';
-      });
+      const code = document.createElement('code');
+      code.innerHTML = '-- ' + err.message + ' --';
 
-    container.appendChild(repoLinks.liveA);
-  }
-  container.appendChild(repoLinks.sourceA);
+      container.appendChild(code);
+    })
 
   return container;
+
 }

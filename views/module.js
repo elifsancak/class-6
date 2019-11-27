@@ -1,6 +1,6 @@
 function renderModule(module, students) {
 
-  // history.pushState({}, null, '/class-6/?module=' + module.name);
+  history.pushState({}, null, '/class-6/?module=' + module.name);
 
   const header = document.createElement('h2');
   header.innerHTML = module.name + ' (' + module.status + ')';
@@ -25,7 +25,8 @@ function renderModule(module, students) {
         .map(repo => {
           const li = document.createElement('li');
           li.appendChild(header);
-          li.appendChild(renderRepo(repo, student));
+          li.appendChild(renderRepo(student, repo));
+          li.appendChild(document.createElement('br'));
           return li;
         })
         .reduce((ul, li) => {

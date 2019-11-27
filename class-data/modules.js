@@ -76,7 +76,7 @@ const modules = [
   },
   {
     name: 'Node JS',
-    status: 'in progress',
+    status: 'to do',
     repos: [
       {
         name: 'node.js',
