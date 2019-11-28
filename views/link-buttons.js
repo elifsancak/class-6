@@ -21,6 +21,11 @@ function renderLinkButtons(student, repo, path) {
       if (resp.ok == true && resp.status !== 404) {
 
         if (repo.live) {
+
+          const base = repo.url
+            ? repo.url
+            : 'https://' + student.userName + '.github.io/' + repo.name;
+
           const liveButton = document.createElement('button');
           liveButton.innerHTML = 'live site';
 
@@ -39,8 +44,8 @@ function renderLinkButtons(student, repo, path) {
 
         const a = document.createElement('a');
         a.href = path
-          ? base + gitPathing + path
-          : base;
+          ? 'https://github.com/' + student.userName + '/' + repo.name + gitPathing + path
+          : 'https://github.com/' + student.userName + '/' + repo.name;
         a.target = '_blank';
         a.appendChild(sourceButton);
 
