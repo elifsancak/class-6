@@ -79,9 +79,14 @@ const modules = [
     status: 'to do',
     repos: [
       {
-        name: 'node.js',
+        name: 'pokedex',
         live: false,
-        type: 'Exercises',
+        type: 'Project',
+      },
+      {
+        name: 'wiki',
+        live: false,
+        type: 'Project',
       },
       {
         name: 'javascript-exercises',
@@ -95,6 +100,8 @@ const modules = [
           'getTheTitles/report.txt',
           'findTheOldest/report.txt',
           'calculator/report.txt',
+          'fibonacci/report.txt',
+          'summAll/report.txt',
         ]
       },
     ]
