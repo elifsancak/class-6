@@ -9,18 +9,32 @@ function renderRepo(student, repo) {
   const repoText = document.createTextNode(headerString);
 
   const repoList = document.createElement('li');
-  repoList.appendChild(repoText);
-  repoList.appendChild(renderLinkButtons(student, repo))
 
-  if (repo.paths instanceof Array) {
-    const pathsList = repo.paths
+  const render = typeof repo.render === 'function'
+    ? repo.render
+    : null;
+
+  repoList.appendChild(repoText);
+  repoList.appendChild(renderLinkButtons(student, repo, null, render))
+
+  if (repo.paths) {
+
+    const paths = repo.paths instanceof Array
+      ? repo.paths
+      : repo.paths.paths;
+
+    const render = typeof repo.paths.render === 'function'
+      ? repo.paths.render
+      : null;
+
+    const pathsList = paths
       .map(path => {
 
         const pathText = document.createTextNode(path + ' : ');
 
         const li = document.createElement('li');
         li.appendChild(pathText);
-        li.appendChild(renderLinkButtons(student, repo, path))
+        li.appendChild(renderLinkButtons(student, repo, path, render))
         return li;
       })
       .reduce((ul, li) => {

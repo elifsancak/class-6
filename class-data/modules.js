@@ -76,27 +76,54 @@ const modules = [
   },
   {
     name: 'Node JS',
-    status: 'to do',
+    status: 'in progress',
     repos: [
-      {
-        name: 'node.js',
-        live: false,
-        type: 'Exercises',
-      },
       {
         name: 'javascript-exercises',
         live: false,
         type: 'Exercises',
-        paths: [
-          'helloWorld/report.txt',
-          'repeatString/report.txt',
-          'reverseString/report.txt',
-          'tempConversion/report.txt',
-          'getTheTitles/report.txt',
-          'findTheOldest/report.txt',
-          'calculator/report.txt',
-        ]
+        paths: {
+          paths: [
+            'helloWorld/report.txt',
+            'repeatString/report.txt',
+            'reverseString/report.txt',
+            'tempConversion/report.txt',
+            'getTheTitles/report.txt',
+            'findTheOldest/report.txt',
+            'calculator/report.txt',
+          ],
+          render: (username, repo, path) => {
+            path = path ? path : '';
+            fetch(`https://${username}.github.io/${repo}/${path}`)
+              .then(resp => resp.text())
+              .then(report => {
+                console.group(`${username}: ${repo}/${path}`)
+                console.log(report);
+                console.groupEnd();
+              })
+              .catch(err => console.log(err));
+          }
+        }
       },
+      {
+        name: 'pokedex-api',
+        live: false,
+        type: 'Project',
+        paths: {
+          paths: ['functions/report.json'],
+          render: (username, repo, path) => {
+            path = path ? path : '';
+            fetch(`https://${username}.github.io/${repo}/${path}`)
+              .then(resp => resp.json())
+              .then(report => {
+                console.group(`${username}: ${repo}/${path}`)
+                console.log(report);
+                console.groupEnd();
+              })
+              .catch(err => console.log(err));
+          }
+        }
+      }
     ]
   },
 ]

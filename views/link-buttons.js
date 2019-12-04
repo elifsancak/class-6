@@ -1,5 +1,6 @@
 
-function renderLinkButtons(student, repo, path) {
+function renderLinkButtons(student, repo, path, render) {
+  // can eventually argsObj this
 
   const container = document.createElement('div');
   container.style.display = 'inline';
@@ -10,7 +11,7 @@ function renderLinkButtons(student, repo, path) {
 
   const gitPathing = repo.url
     ? ''
-    : '/blob/master/';
+    : '/tree/master/';
 
   const pagesCheck = path
     ? base + '/' + path
@@ -40,7 +41,7 @@ function renderLinkButtons(student, repo, path) {
         }
 
         const sourceButton = document.createElement('button');
-        sourceButton.innerHTML = 'source code';
+        sourceButton.innerHTML = 'review source';
 
         const a = document.createElement('a');
         a.href = path
@@ -51,9 +52,19 @@ function renderLinkButtons(student, repo, path) {
 
         container.appendChild(a);
 
+
+        if (typeof render === 'function') {
+          const logButton = document.createElement('button');
+          logButton.innerHTML = 'log report';
+          logButton.onclick = () => {
+            repo.paths.render(student.userName, repo.name, path);
+          }
+          container.appendChild(logButton);
+        }
+
       } else {
         const code = document.createElement('code');
-        code.innerHTML = '-- 404 --';
+        code.innerHTML = '-- nope --';
 
         container.appendChild(code);
       }
