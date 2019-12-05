@@ -50,6 +50,7 @@ const modules = [
   },
   {
     name: 'javascript 3',
+    projectNumber: 1,
     status: 'in progress',
     repos: [
       {
@@ -77,6 +78,7 @@ const modules = [
   {
     name: 'Node JS',
     status: 'in progress',
+    projectNumber: 2,
     repos: [
       {
         name: 'javascript-exercises',

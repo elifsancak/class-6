@@ -47,6 +47,20 @@ function renderModule(module, students) {
 
   const container = document.createElement('div');
   container.appendChild(header);
+  if (typeof module.projectNumber === 'number') {
+
+    const projectBoardButton = document.createElement('button');
+    projectBoardButton.innerHTML = 'Homework Project Board';
+
+    const pbA = document.createElement('a');
+    pbA.target = '_blank';
+    pbA.href = "https://github.com/HackYourFutureBelgium/class-6/projects/" + module.projectNumber;
+    pbA.appendChild(projectBoardButton);
+
+    container.appendChild(pbA);
+    container.appendChild(document.createElement('br'));
+    container.appendChild(document.createElement('br'));
+  }
   container.appendChild(studentsUl);
 
   return container;
