@@ -109,7 +109,7 @@ const modules = [
       },
       {
         name: 'pokedex-api',
-        live: false,
+        live: true,
         type: 'Project',
         paths: {
           paths: ['functions/report.json'],
