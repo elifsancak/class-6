@@ -51,7 +51,7 @@ const modules = [
   {
     name: 'javascript 3',
     projectNumber: 1,
-    status: 'in progress',
+    status: 'complete',
     repos: [
       {
         name: 'javascript-3',
