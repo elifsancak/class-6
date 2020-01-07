@@ -7,33 +7,29 @@
 
 * **Name :** *_Ibrahim Akader_*
   
-* **Age :** _30_
+* **Date of birth :** _22/September_
   
 * **Nationality :** _ETHIOPIA_ 🇪🇹 
+* **Marital status :** _single_ 
+
   
 ---
-## _Things i like to do :_
+## _hobbies:_
 
-- _Learning new thing_
-- _Traveling_
-- _FOOD & CODING_
+- _Sport_
+- _watching tech talks_
+- _FOOD & FILM_
   
 
   
 
 ##  _Cooking my favorite:_
-- _Ethiopian & Lebanese Hummus_ 👨‍🍳 
+- _Ethiopian Injera & Lebanese Hummus_ 👨‍🍳 
   
 
 ## _Playing Video Games_
   - Action Games 
   - Memory Games 
-
-- _Discovering_
-  
-- _Watching **Movies**_
-
-
 
   ---
 :heart:
