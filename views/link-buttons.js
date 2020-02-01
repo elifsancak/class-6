@@ -14,7 +14,7 @@ function renderLinkButtons(student, repo, path, render) {
     : '/tree/master/';
 
   const pagesCheck = path
-    ? base + '/' + path
+    ? base + '/' + path + ( repo.live ? `/build` : '')
     : base + '/index.html';
 
   fetch(pagesCheck)
@@ -32,7 +32,7 @@ function renderLinkButtons(student, repo, path, render) {
 
           const a = document.createElement('a');
           a.href = path
-            ? base + '/' + path
+            ? base + '/' + path + ( repo.live ? `/build` : '')
             : base;
           a.target = '_blank';
           a.appendChild(liveButton);
@@ -52,6 +52,15 @@ function renderLinkButtons(student, repo, path, render) {
 
         container.appendChild(a);
 
+        if (repo.badge && path) {
+          const badgeSrc = `https://github.com/${student.userName}/${repo.name}/workflows/${encodeURIComponent(path)}/badge.svg`;
+
+          const badeImg = document.createElement('img');
+          badeImg.alt = 'Github Badge';
+          badeImg.src = badgeSrc;
+
+          container.appendChild(badeImg);
+        }
 
         if (typeof render === 'function') {
           const logButton = document.createElement('button');

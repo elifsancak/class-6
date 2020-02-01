@@ -77,7 +77,7 @@ const modules = [
   },
   {
     name: 'Node JS',
-    status: 'in progress',
+    status: 'complete',
     projectNumber: 2,
     repos: [
       {
@@ -128,4 +128,44 @@ const modules = [
       }
     ]
   },
-]
+  {
+    name: 'react',
+    status: 'in progress',
+    projectNumber: 4,
+    repos: [
+      {
+        name: 'React',
+        paths: [
+          'week-1-project',
+          'week-2-project',
+          'week-3-project',
+          'week-4-project',
+          'week-5-project',
+        ],
+        live: true,
+        build: true,
+        badge: true,
+      },
+      {
+        name: 'react-week-1-project',
+        live: true,
+      },
+      {
+        name: 'react-week-2-project',
+        live: true,
+      },
+      {
+        name: 'react-week-3-project',
+        live: true,
+      },
+      {
+        name: 'react-week-4-project',
+        live: true,
+      },
+      {
+        name: 'react-week-5-project',
+        live: true,
+      },
+    ]
+  },
+];
