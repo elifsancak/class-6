@@ -13,7 +13,8 @@ Along with practicing your programming skills you will also be working on your c
 * [What we expect from you](#what-we-expect-from-you)
 * [What you can expect from the module](#what-you-can-expect-from-the-module)
 * [The schedule](#the-schedule)
-* [Weekly Check-Ins](weekly-check-ins)
+* [Weekly Check-Ins](#weekly-check-ins)
+* [Helpful Resources](#helpful-resources)
 
 ---
 
@@ -96,3 +97,18 @@ Here's a template you can use as a starting point, but feel free to add more inf
 * __What have I have worked on so far this week__:
 * __What I am stuck on__:
 * __What I plan on working on next__:
+
+---
+
+## Helpful Resources
+
+### Git Workflows
+
+* [study.hackyourfuture.be](https://study.hackyourfuture.be/git-and-github/workflows)
+* [Collaborative Git Workflow](https://gist.github.com/adamloving/5690951)
+
+### Tutorials
+
+* [FCC: Restful API](https://www.youtube.com/watch?v=o3ka5fYysBM)
+* [Traversy: http & rest](https://www.youtube.com/watch?v=Q-BpqyOT3a8)
+* [Traversy: fullStack](https://www.youtube.com/watch?v=v0t42xBIYIs)
